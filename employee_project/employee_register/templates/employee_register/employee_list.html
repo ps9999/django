@@ -1,0 +1,26 @@
+{% extends "employee_register/base.html" %}
+
+{% block content %}
+<table class="table table-border">
+    <tr class="border-bottom font-weight-bold">
+        <th>Full Name</th>
+        <th>Employee Code</th>
+        <th>Position</th>
+        <th>Phone No</th>
+        <th>Action</th>
+    </tr>
+    {% for emp in emp_list %}
+        <tr>
+            <td>{{emp.full_name}}</td>
+            <td>{{emp.emp_code}}</td>
+            <td>{{emp.position}}</td>
+            <td>{{emp.mobile}}</td>
+            <td>
+                <a href="{% url 'employee_update' emp.id %}" class="btn text-secondary px-0">
+                    <i class="far fa-edit fa-lg"></i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

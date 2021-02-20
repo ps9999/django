@@ -1,0 +1,17 @@
+{% extends "employee_register/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6">{{form.full_name|as_crispy_field}}</div>
+        <div class="col-md-6">{{form.emp_code|as_crispy_field}}</div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-6">{{form.position|as_crispy_field}}</div>
+        <div class="col-md-6">{{form.mobile|as_crispy_field}}</div>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+{% endblock content %} 
